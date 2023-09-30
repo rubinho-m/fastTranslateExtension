@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="formInput">
+        <h2 class="title">Введите слово</h2>
+        <form>
+            <div class="omrs-input-group">
+                <label class="omrs-input-underlined">
+                    <input required type="text" name="englishWord" id="englishWord" autocomplete="off">
+                    <span class="omrs-input-label">English word</span>
+                </label>
+            </div>
+            <div class="omrs-input-group">
+                <label class="omrs-input-underlined">
+                    <input required type="text" name="russianWord" id="russianWord" autocomplete="off">
+                    <span class="omrs-input-label">Translation</span>
+                </label>
+            </div>
+            <button class="notVisible" type="button" id="addButton">
+                <span>Добавить</span>
+                <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

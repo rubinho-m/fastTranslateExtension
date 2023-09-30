@@ -5,8 +5,14 @@ let datalist = document.getElementsByTagName('datalist')[0]
 
 addButton.addEventListener('click', function () {
     let dictionary = JSON.parse(localStorage.getItem('dictionary'))
-    console.log(dictionary)
     dictionary[englishWord.value] = russianWord.value
+
+    for (let key in dictionary){
+        if (dictionary[key] === ''){
+            delete dictionary[key]
+        }
+    }
+
     localStorage.setItem('dictionary', JSON.stringify(dictionary))
 })
 
@@ -50,12 +56,10 @@ englishWord.addEventListener('input', function () {
     } else {
         russianWord.value = ''
     }
-
 })
 
 function selectedOption(value) {
     let selected;
-// see if there a matching item, ignoring case
     datalist.childNodes.forEach(function(option) {
         if (option.value.toLowerCase() === value.toLowerCase())
             selected = option;
@@ -78,3 +82,4 @@ englishWord.addEventListener('keypress', function(ev) {
 russianWord.addEventListener('click', function () {
     russianWord.value = ''
 })
+

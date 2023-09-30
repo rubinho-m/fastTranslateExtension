@@ -79,6 +79,10 @@ englishWord.addEventListener('keypress', function(ev) {
     }
 });
 
+englishWord.addEventListener("click", function () {
+    datalist.innerHTML = ''
+})
+
 russianWord.addEventListener('click', function () {
     russianWord.value = ''
 })

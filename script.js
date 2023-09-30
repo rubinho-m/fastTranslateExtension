@@ -20,17 +20,17 @@ englishWord.addEventListener('input', function () {
     let flag = false
     let word
     keys.forEach(str => {
-        if (word === undefined) {
-            if (str.startsWith(englishValue)) {
-                flag = true
+        if (str.startsWith(englishValue)) {
+            flag = true
+            if (word === undefined || str.length < word.length){
                 word = str
             }
         }
 
+
     })
 
     if (flag && englishValue !== '') {
-
         russianWord.value = word + ' - ' + dictionary[word]
     } else {
         russianWord.value = ''
@@ -39,13 +39,17 @@ englishWord.addEventListener('input', function () {
 
 })
 
+russianWord.addEventListener('click', function () {
+    russianWord.value = ''
+})
+
 function checkRussianWordValue() {
-    let value = russianWord.value
-    if (value === '') {
-        addButton.classList.remove('notVisible')
-        addButton.classList.add('visible')
-    } else {
-        addButton.classList.remove('visible')
-        addButton.classList.add('notVisible')
-    }
+    // let value = russianWord.value
+    // if (value === '') {
+    //     addButton.classList.remove('notVisible')
+    //     addButton.classList.add('visible')
+    // } else {
+    //     addButton.classList.remove('visible')
+    //     addButton.classList.add('notVisible')
+    // }
 }
